@@ -1,0 +1,76 @@
+﻿file,variable,Meanings
+departments,Address,
+departments,City,
+departments,CensusTract,Code to identify geographic location according to U.S. Census. A Tract is an area that sits within a Block. 
+departments,County,
+departments,DepartmentKey,Identifies the Department. Used to link to other files.
+departments,Department Name,Name of the department
+departments,DepartmentSpecialty,More details about providers in the department. Relates to the encounter.
+departments,DepartmentType,"Overarching, high-level description of department.  ""Normal"" is outpatient or clinic; HOD (hospital outpatietnd epartment), ED (emergency), OR (Operating Room), LND (labor and delivery), SNF (skilled nursing facility), ICU (intenseive care unit)"
+departments,PostalCode,Zip code
+diagnosis,DiagnosisKey,matches PrimaryDiagnosisKey in Encounters to aid uniquely identifying diagnosis
+diagnosis,DiagnosisName,Info. about patient diagnosis
+diagnosis,DiagnosisValue,"Code that identifies a specific diagnosis. This should follow a patient throughout all related encounters and can be used to define a patient's ""journey""
+"
+diagnosis,GroupCode,ICD-10-CM high-level code that identifies the general nature of the diagnosis.
+diagnosis,GroupName,"Desription of GroupCode, the high-level description of the diagnosis."
+encounters,AdmissionInstant,Time and day of admission to hospital or surgery
+encounters,AdmissionSource,Where the patient was immediately prior to hospital admission
+encounters,AdmissionType,"The reason for hospital admission. If the encounter was not at a hospital, this is ""*Not Applicable"". Useful for  understanding urgency of visit."
+encounters,AdmitDay,The day of admission as given in AdmissionIntant
+encounters,AdmitHour,The hour of admission
+encounters,AdmitMinute,The minute of admission
+encounters,AdmitMonth,The month of admission
+encounters,AdmitYear,The year of admission
+encounters,AttendingProviderDurableKey,"Identifies the provider for linking to the providers file. But the encounter might be with a robot or machine, in which case the value may be ""Unspecified"""
+encounters,Date,Date of encounter
+encounters,DepartmentKey,Links to departments file
+encounters,DischargeDay,Day patient was discharged; taken from DischargeInstant
+encounters,DischargeHour,Hour patient was discharged; taken from DischargeInstant
+encounters,DischargeInstant,date and time of discharge for some visit types.
+encounters,DischargeMinute,Minute of time of discharge; from DischargeInstant
+encounters,DischargeMonth,Month of discharge; from DischargeInstant
+encounters,DischargeProviderDurableKey,The discharge provider is the person who saw the patient last. Links to providers.
+encounters,DischargeYear,Year of discharge; from DischargeInstant
+encounters,EncounterKey,unique identifier of row in encounters.
+encounters,IsEdVisit,Indicator of emergency visit.
+encounters,IsHospitalAdmission,Indicator of admission to hospital
+encounters,IsHospitalOutpatientVisit,Indicator that encoutner is an outpatient visit
+encounters,IsInpatientAdmission,Indicator that encounter is an inpatient admission
+encounters,IsObservation,Indicates patient under observation. This is a lower level of risk.
+encounters,IsOutpatientFaceToFaceVisit,Indicator of an in-person visit for outpatient (as opposed to virtual)
+encounters,PatientDurableKey,Key in the encounter data that matches 'DurableKey' in 'patients  file
+encounters,PrimaryDiagnosisKey,Key in the encounter data that matches 'DiagnosisKey' in 'diagnosis' data
+encounters,ProviderDurableKey,Key in the encounter data that matches 'DurableKey' in 'providers' data
+encounters,Type,Type of visit; high level description. Where in the system the patient is seen. 
+encounters,VisitType,Specific service the patient received.
+encounters,VisitTypeDescription,Higher level description of type for visit
+patients,CensusBlockGroupFipsCode,Geographic location of patient's home according to U.S. Census designation.
+patients,DurableKey,unique patient identifier; matches with PatientDurableKey in encounters file
+patients,FirstRace,"patient race. If patient states multiple races, this is the first race given."
+patients,MaritalStatus,"Nine marital statuses provided. ""*Unspecified"" means asked but not answered or the patient was not capable of getting an answer. Unknown means not recorded."
+patients,MyChartStatus,"Mychart is an app that allows patients to view their medical records, communicate with care givers, refill prescriptions, consult lab tests, etc. Patients are invited to activate MyChart but may or may not follow through. First, an activation code is generated and, if the patient responds, status changes to ""activation pending' and then, finally, ""activated"". "
+patients,OmbEthnicity,Ethnicity according to U.S. Office of Management and Budget categories.
+patients,OmbRace,Race according to U.S. Office of Management and Budget categories
+patients,PatientBirthYearBin,"Birth year of patient in five-year bins. For example, ""1970"" indicates patient born in (1965, 1970]."
+patients,SexAssignedAtBirth,"Seven categories. ""*Unspecified"" means patient asked but didn't answer or was not capable of answer. Unknown means nothing was entered."
+patients,SexualOrientation,unspecified means we've addressed the field but haven't answered. Blank means nothing was entered.
+patients,SmokingStatus,last known status
+patients,VitalStatus,Patient died after 2021 or later.
+providers,ClinicianTitle,"Licensures of the care provider (i.e. Registered Nurse, Medical Doctor, etc.)"
+providers,DurableKey,Links to patients file via ProviderDurableKey
+providers,OfficeAddress,Address of provider's primary work location
+providers,OfficePostalCode,Postal (Zip) Code of provider's primary work location
+providers,OfficeCity,City of provider's primary work location
+providers,PrimaryDepartment,The primary location  at which the provider sees  most of their patients.
+providers,PrimarySpecialty,The provider's specialty. What kind of patients and conditions do they see.
+providers,Type,"e.g. physician, nurse practitioner, therapist, the field of the provider. A slightly higher level of description than Clinicial Title, which provides more detail. Provides general description of ClinicianTitle."
+social_determinants,AnswerText,Patient's answer to a specific question
+social_determinants,DisplayName,Question asked
+social_determinants,Domain,"Domain the question attempts to assess: Alcohol Use, Depression, Financial Resource Strain, Food Insecurity, Housing Stability, Intimate Partner Violence, Physical Activity, Postpartum Depression, Social Connections, Stress, Transportation Needs, Utilities"
+social_determinants,EncounterKey,Identifies the encounter at which the questionnaire was administered. Links to encounters file.
+social_determinants,PatientDurableKey,Identifies the patient who responded to the questionnaire. Links to patients file.
+tigercensuscodes,GEOID,"CensusBlockGroupFipsCode. Identifies a U.S. Census ""block"""
+,CENTLAT,Latitude of center of Block; https://tigerweb.geo.census.gov/tigerwebmain/Files/tab20/tigerweb_tab20_blkgrp_2020_ks.html
+,CENTLONG,Longitude of center of Block;  https://tigerweb.geo.census.gov/tigerwebmain/Files/tab20/tigerweb_tab20_blkgrp_2020_ks.html
+,Population,U.S. Census population count in that Block (as of 2020).
