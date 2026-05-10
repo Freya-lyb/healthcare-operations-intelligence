@@ -1,0 +1,998 @@
+{
+  "findings": [
+    {
+      "module": "30\u5929\u518d\u5165\u9662",
+      "finding": "Top\u518d\u5165\u9662\u9884\u6d4b\u56e0\u5b50: total_encounters, sdoh_financial_resource_strain, sdoh_stress, sdoh_housing_stability, sdoh_social_connections",
+      "detail": "\u6700\u5f3a\u6548\u5e94: total_encounters (d=2.579)",
+      "significance": "Bonferroni corrected"
+    },
+    {
+      "module": "MyChart\u6570\u5b57\u9e3f\u6c9f",
+      "finding": "MyChart\u6fc0\u6d3b\u60a3\u8005ED\u6bd4\u7387\u66f4\u4f4e",
+      "detail": "ED ratio\u5dee\u5f02: -63.6%, \u518d\u5165\u9662\u7387\u5dee\u5f02: 8.7%",
+      "significance": "Mann-Whitney U"
+    },
+    {
+      "module": "SDOH\u00d7\u591c\u95f4\u5c31\u8bca",
+      "finding": "\u6709SDOH\u98ce\u9669\u60a3\u8005\u591c\u95f4\u5c31\u8bca\u6bd4\u4f8b\u66f4\u4f4e (d=-0.189)",
+      "detail": "\u6709SDOH: 0.0913, \u65e0SDOH: 0.1203, p=1.00e+00",
+      "significance": "Mann-Whitney U, p=1.00e+00"
+    },
+    {
+      "module": "\u5e74\u9f84\u5206\u5c42",
+      "finding": "\u5e74\u9f84\u7ec4\u95f4ED\u6bd4\u7387\u5dee\u5f02\u663e\u8457 (H=3051.9, p=0.00e+00)",
+      "detail": "ED\u6bd4\u7387\u8303\u56f4: 0.000 - 1.000",
+      "significance": "Kruskal-Wallis, p=0.00e+00"
+    },
+    {
+      "module": "\u5468\u672b\u6548\u5e94",
+      "finding": "\u5468\u672bED\u5c31\u8bca\u6bd4\u7387\u663e\u8457\u9ad8\u4e8e\u5de5\u4f5c\u65e5 (V=0.2194)",
+      "detail": "\u5468\u672bED\u7387: 0.2254, \u5de5\u4f5c\u65e5: 0.0258",
+      "significance": "Chi\u00b2=369455.0, p=0.00e+00, Cram\u00e9r's V=0.2194"
+    },
+    {
+      "module": "\u5171\u75c5\u8d1f\u62c5",
+      "finding": "\u5171\u75c5\u6570\u4e0eED\u6bd4\u7387\u6b63\u76f8\u5173 (\u03c1=0.219), \u4e0e\u518d\u5165\u9662\u6b63\u76f8\u5173 (\u03c1=0.139)",
+      "detail": "\u8bca\u65ad\u657011+\u7684\u60a3\u8005ED\u7387=0.033, 1\u4e2a\u8bca\u65ad=0.106",
+      "significance": "Spearman, p_ed=0.00e+00, p_readmit=0.00e+00"
+    },
+    {
+      "module": "\u79cd\u65cf\u5dee\u5f02",
+      "finding": "\u79cd\u65cf\u95f4ED\u6bd4\u7387\u5b58\u5728\u663e\u8457\u5dee\u5f02 (H=8584.5, p=0.00e+00)",
+      "detail": "ED\u6bd4\u7387\u8303\u56f4: 0.055 - 0.198",
+      "significance": "Kruskal-Wallis, p=0.00e+00"
+    },
+    {
+      "module": "\u5168\u5c40\u76f8\u5173\u6027",
+      "finding": "\u53d1\u73b032\u5bf9\u4e2d\u7b49\u4ee5\u4e0a\u76f8\u5173 (|\u03c1|>0.3)",
+      "detail": "sdoh_transportation_needs\u2194sdoh_food_insecurity(\u03c1=0.996); sdoh_financial_resource_strain\u2194sdoh_food_insecurity(\u03c1=0.982); sdoh_financial_resource_strain\u2194sdoh_transportation_needs(\u03c1=0.980); total_encounters\u2194unique_diagnoses(\u03c1=0.950); sdoh_social_connections\u2194sdoh_financial_resource_strain(\u03c1=0.895)",
+      "significance": "Spearman rank correlation"
+    }
+  ],
+  "readmit_predictors": [
+    {
+      "variable": "total_encounters",
+      "readmit_mean": 108.72894590072504,
+      "no_readmit_mean": 20.009391022656406,
+      "ratio": 5.433895803106276,
+      "cohen_d": 2.578632890409388,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_financial_resource_strain",
+      "readmit_mean": 0.5251905558654025,
+      "no_readmit_mean": 0.1580615213569576,
+      "ratio": 3.32269708248183,
+      "cohen_d": 0.9998746953304687,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_stress",
+      "readmit_mean": 0.4796430563301729,
+      "no_readmit_mean": 0.14866203323541613,
+      "ratio": 3.2263991410007593,
+      "cohen_d": 0.9236716457120786,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_housing_stability",
+      "readmit_mean": 0.5131065253764641,
+      "no_readmit_mean": 0.09389893927721858,
+      "ratio": 5.464454969630867,
+      "cohen_d": 1.416810831974025,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_social_connections",
+      "readmit_mean": 0.46253950548429074,
+      "no_readmit_mean": 0.1338615783577562,
+      "ratio": 3.455356728635871,
+      "cohen_d": 0.9571157307125936,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_unique_domains",
+      "readmit_mean": 5.009853132552519,
+      "no_readmit_mean": 1.3950098904850994,
+      "ratio": 3.5912671062213026,
+      "cohen_d": 1.1341988128020375,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_total_screenings",
+      "readmit_mean": 53.56311582078453,
+      "no_readmit_mean": 10.30941839432701,
+      "ratio": 5.195551656944959,
+      "cohen_d": 2.171269953937738,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_transportation_needs",
+      "readmit_mean": 0.5257482803495074,
+      "no_readmit_mean": 0.16150132202347192,
+      "ratio": 3.255380660432596,
+      "cohen_d": 0.9836515895299681,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_food_insecurity",
+      "readmit_mean": 0.5253764640267707,
+      "no_readmit_mean": 0.16082690663438504,
+      "ratio": 3.2667199476834585,
+      "cohen_d": 0.9860878303982984,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "ed_ratio",
+      "readmit_mean": 0.07468439986469058,
+      "no_readmit_mean": 0.06990257776616518,
+      "ratio": 1.0684069493763353,
+      "cohen_d": 0.025610113612195236,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "encounters_per_month",
+      "readmit_mean": 4.703922539002371,
+      "no_readmit_mean": 1.2662263662067388,
+      "ratio": 3.7149143822474744,
+      "cohen_d": 1.7266869614297473,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "unique_departments",
+      "readmit_mean": 21.35527049637479,
+      "no_readmit_mean": 5.983695514150025,
+      "ratio": 3.568909956376394,
+      "cohen_d": 2.3276505202248745,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "unique_diagnoses",
+      "readmit_mean": 29.290760364379995,
+      "no_readmit_mean": 9.025069064086393,
+      "ratio": 3.2454887775803516,
+      "cohen_d": 1.7917889365602813,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "hospital_admissions",
+      "readmit_mean": 4.271425915597694,
+      "no_readmit_mean": 0.2157649535387055,
+      "ratio": 19.796662273196535,
+      "cohen_d": 5.621448159983591,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "ed_visits",
+      "readmit_mean": 6.1548614984197805,
+      "no_readmit_mean": 0.6443658096794128,
+      "ratio": 9.551812659771581,
+      "cohen_d": 2.618847272076297,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "inpatient_ratio",
+      "readmit_mean": 0.08209959684376067,
+      "no_readmit_mean": 0.017288870113607767,
+      "ratio": 4.748696491110863,
+      "cohen_d": 0.7180130168058276,
+      "p_value": 0.0,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    },
+    {
+      "variable": "approx_age",
+      "readmit_mean": 58.081447963800905,
+      "no_readmit_mean": 44.59142135614941,
+      "ratio": 1.3025251538834641,
+      "cohen_d": 0.549735375966502,
+      "p_value": 1.613501650814748e-276,
+      "n_readmit": 4420,
+      "n_no_readmit": 344903,
+      "significant": true
+    },
+    {
+      "variable": "sdoh_depression",
+      "readmit_mean": 0.050567019892173264,
+      "no_readmit_mean": 0.019419777019648345,
+      "ratio": 2.6038929201406935,
+      "cohen_d": 0.2231881910408906,
+      "p_value": 2.619514099116671e-59,
+      "n_readmit": 5379,
+      "n_no_readmit": 354381,
+      "significant": true
+    }
+  ],
+  "mychart_comparison": [
+    {
+      "metric": "total_encounters",
+      "activated_mean": 26.69696746171903,
+      "not_activated_mean": 10.50717112439264,
+      "diff_pct": 154.08330316179402,
+      "cohen_d": 0.46087452207624796,
+      "p_value": 0.0,
+      "significant": true
+    },
+    {
+      "metric": "ed_visits",
+      "activated_mean": 0.7554834314674118,
+      "not_activated_mean": 0.6361161442698614,
+      "diff_pct": 18.765014576789437,
+      "cohen_d": 0.054009739407640325,
+      "p_value": 4.622033258238093e-37,
+      "significant": true
+    },
+    {
+      "metric": "ed_ratio",
+      "activated_mean": 0.04361836954984968,
+      "not_activated_mean": 0.11979055361162713,
+      "diff_pct": -63.58780535294564,
+      "cohen_d": -0.42329198742019214,
+      "p_value": 1.5746912211245711e-96,
+      "significant": true
+    },
+    {
+      "metric": "hospital_admissions",
+      "activated_mean": 0.28039589181965313,
+      "not_activated_mean": 0.22487852809404044,
+      "diff_pct": 24.687712160049475,
+      "cohen_d": 0.06568281544765053,
+      "p_value": 1.1375512421619016e-146,
+      "significant": true
+    },
+    {
+      "metric": "inpatient_ratio",
+      "activated_mean": 0.013061974237212136,
+      "not_activated_mean": 0.027948083331092045,
+      "diff_pct": -53.263434624582,
+      "cohen_d": -0.1651900321561695,
+      "p_value": 2.389823824262422e-63,
+      "significant": true
+    },
+    {
+      "metric": "encounters_per_month",
+      "activated_mean": 1.1623086973409384,
+      "not_activated_mean": 1.4182204625943304,
+      "diff_pct": -18.044568669193804,
+      "cohen_d": -0.14331909838271817,
+      "p_value": 0.0,
+      "significant": true
+    },
+    {
+      "metric": "unique_diagnoses",
+      "activated_mean": 11.800617875878109,
+      "not_activated_mean": 4.643273746743471,
+      "diff_pct": 154.14434985993216,
+      "cohen_d": 0.6403012292506721,
+      "p_value": 0.0,
+      "significant": true
+    },
+    {
+      "metric": "sdoh_total_screenings",
+      "activated_mean": 14.525263920648076,
+      "not_activated_mean": 5.205569227718131,
+      "diff_pct": 179.03315248033397,
+      "cohen_d": 0.4540063481144347,
+      "p_value": 0.0,
+      "significant": true
+    },
+    {
+      "metric": "readmit_30d",
+      "activated_mean": 0.013268710921737169,
+      "not_activated_mean": 0.012205785578422623,
+      "diff_pct": 8.708373061981236,
+      "cohen_d": 0.009411156599452188,
+      "p_value": 0.010013269895939546,
+      "significant": true
+    }
+  ],
+  "night_correlations": [
+    {
+      "sdoh_domain": "social_connections",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 25088,
+      "mean_night_ratio": 0.08312082450350708
+    },
+    {
+      "sdoh_domain": "housing_stability",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 21623,
+      "mean_night_ratio": 0.10344209502452514
+    },
+    {
+      "sdoh_domain": "stress",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 26875,
+      "mean_night_ratio": 0.08372206806394224
+    },
+    {
+      "sdoh_domain": "depression",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 4204,
+      "mean_night_ratio": 0.10406865918191942
+    },
+    {
+      "sdoh_domain": "financial_resource_strain",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 29950,
+      "mean_night_ratio": 0.08864090636097172
+    },
+    {
+      "sdoh_domain": "transportation_needs",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 30119,
+      "mean_night_ratio": 0.0886662718514839
+    },
+    {
+      "sdoh_domain": "food_insecurity",
+      "spearman_rho": NaN,
+      "p_value": NaN,
+      "n": 30031,
+      "mean_night_ratio": 0.08869271093214583
+    }
+  ],
+  "age_stratification": [
+    {
+      "PatientBirthYearBin": 1850.0,
+      "n": 1,
+      "mean_ed_ratio": 0.0,
+      "mean_inpatient_ratio": 0.0,
+      "mean_readmit": 0.0,
+      "mean_encounters": 1.0,
+      "mean_unique_diag": 1.0,
+      "mean_sdoh_screenings": 0.0,
+      "mean_ed_visits": 0.0
+    },
+    {
+      "PatientBirthYearBin": 1890.0,
+      "n": 1,
+      "mean_ed_ratio": 0.0,
+      "mean_inpatient_ratio": 0.0,
+      "mean_readmit": 0.0,
+      "mean_encounters": 1.0,
+      "mean_unique_diag": 1.0,
+      "mean_sdoh_screenings": 0.0,
+      "mean_ed_visits": 0.0
+    },
+    {
+      "PatientBirthYearBin": 1900.0,
+      "n": 136,
+      "mean_ed_ratio": 0.06127450980392157,
+      "mean_inpatient_ratio": 0.0,
+      "mean_readmit": 0.0,
+      "mean_encounters": 1.1142322599743455,
+      "mean_unique_diag": 1.1176470588235294,
+      "mean_sdoh_screenings": 0.20588235294117646,
+      "mean_ed_visits": 0.0661764705882353
+    },
+    {
+      "PatientBirthYearBin": 1905.0,
+      "n": 1,
+      "mean_ed_ratio": 0.0,
+      "mean_inpatient_ratio": 0.0,
+      "mean_readmit": 0.0,
+      "mean_encounters": 2.797445482866044,
+      "mean_unique_diag": 1.0,
+      "mean_sdoh_screenings": 0.0,
+      "mean_ed_visits": 0.0
+    },
+    {
+      "PatientBirthYearBin": 1910.0,
+      "n": 13,
+      "mean_ed_ratio": 1.0,
+      "mean_inpatient_ratio": 0.0,
+      "mean_readmit": 0.0,
+      "mean_encounters": 1.0,
+      "mean_unique_diag": 1.0,
+      "mean_sdoh_screenings": 0.0,
+      "mean_ed_visits": 1.0
+    },
+    {
+      "PatientBirthYearBin": 1915.0,
+      "n": 7,
+      "mean_ed_ratio": 0.016252215618809285,
+      "mean_inpatient_ratio": 0.016252215618809285,
+      "mean_readmit": 0.14285714285714285,
+      "mean_encounters": 1.3193102739782823,
+      "mean_unique_diag": 16.714285714285715,
+      "mean_sdoh_screenings": 17.857142857142858,
+      "mean_ed_visits": 1.2857142857142858
+    },
+    {
+      "PatientBirthYearBin": 1920.0,
+      "n": 98,
+      "mean_ed_ratio": 0.03253991760678426,
+      "mean_inpatient_ratio": 0.016320889210136892,
+      "mean_readmit": 0.05102040816326531,
+      "mean_encounters": 1.5272366253848921,
+      "mean_unique_diag": 12.10204081632653,
+      "mean_sdoh_screenings": 10.816326530612244,
+      "mean_ed_visits": 1.2448979591836735
+    },
+    {
+      "PatientBirthYearBin": 1925.0,
+      "n": 779,
+      "mean_ed_ratio": 0.03613791094771877,
+      "mean_inpatient_ratio": 0.014319201408979968,
+      "mean_readmit": 0.05006418485237484,
+      "mean_encounters": 1.759575885461707,
+      "mean_unique_diag": 13.591784338896021,
+      "mean_sdoh_screenings": 15.507060333761233,
+      "mean_ed_visits": 1.3299101412066752
+    },
+    {
+      "PatientBirthYearBin": 1930.0,
+      "n": 2594,
+      "mean_ed_ratio": 0.03258349473442491,
+      "mean_inpatient_ratio": 0.013946647332234201,
+      "mean_readmit": 0.04394757131842714,
+      "mean_encounters": 1.8020700670150818,
+      "mean_unique_diag": 15.321511179645336,
+      "mean_sdoh_screenings": 18.900925212027758,
+      "mean_ed_visits": 1.3030069390902081
+    },
+    {
+      "PatientBirthYearBin": 1935.0,
+      "n": 5682,
+      "mean_ed_ratio": 0.026534556380404962,
+      "mean_inpatient_ratio": 0.011267677179033602,
+      "mean_readmit": 0.04523055262231609,
+      "mean_encounters": 1.7687682808208935,
+      "mean_unique_diag": 17.333509327701513,
+      "mean_sdoh_screenings": 22.663674762407602,
+      "mean_ed_visits": 1.2398803238296374
+    },
+    {
+      "PatientBirthYearBin": 1940.0,
+      "n": 9973,
+      "mean_ed_ratio": 0.02428967541496657,
+      "mean_inpatient_ratio": 0.009458985031452798,
+      "mean_readmit": 0.03379123633811291,
+      "mean_encounters": 1.6962536055513302,
+      "mean_unique_diag": 16.641832948962197,
+      "mean_sdoh_screenings": 21.79304121127043,
+      "mean_ed_visits": 0.9717236538654367
+    },
+    {
+      "PatientBirthYearBin": 1945.0,
+      "n": 15875,
+      "mean_ed_ratio": 0.02282772107341833,
+      "mean_inpatient_ratio": 0.008764671675173228,
+      "mean_readmit": 0.026456692913385826,
+      "mean_encounters": 1.6203043071346845,
+      "mean_unique_diag": 15.748850393700787,
+      "mean_sdoh_screenings": 20.849952755905512,
+      "mean_ed_visits": 0.7797795275590551
+    },
+    {
+      "PatientBirthYearBin": 1950.0,
+      "n": 20816,
+      "mean_ed_ratio": 0.023536797150796616,
+      "mean_inpatient_ratio": 0.007271437616140681,
+      "mean_readmit": 0.021762106072252114,
+      "mean_encounters": 1.5155036776025166,
+      "mean_unique_diag": 14.635472713297464,
+      "mean_sdoh_screenings": 19.204410069177555,
+      "mean_ed_visits": 0.660021137586472
+    },
+    {
+      "PatientBirthYearBin": 1955.0,
+      "n": 23404,
+      "mean_ed_ratio": 0.02922531166311867,
+      "mean_inpatient_ratio": 0.00721387974038466,
+      "mean_readmit": 0.01845838318236199,
+      "mean_encounters": 1.4382296512896504,
+      "mean_unique_diag": 13.413390873354983,
+      "mean_sdoh_screenings": 17.547427790121347,
+      "mean_ed_visits": 0.6759955563151598
+    },
+    {
+      "PatientBirthYearBin": 1960.0,
+      "n": 22919,
+      "mean_ed_ratio": 0.03804750225403742,
+      "mean_inpatient_ratio": 0.007761035271557183,
+      "mean_readmit": 0.01579475544308216,
+      "mean_encounters": 1.3221147718883164,
+      "mean_unique_diag": 11.643658100266155,
+      "mean_sdoh_screenings": 14.802696452724813,
+      "mean_ed_visits": 0.6941402329944587
+    },
+    {
+      "PatientBirthYearBin": 1965.0,
+      "n": 19273,
+      "mean_ed_ratio": 0.04681571293413835,
+      "mean_inpatient_ratio": 0.008784760439469722,
+      "mean_readmit": 0.014009235718362475,
+      "mean_encounters": 1.2834367345393805,
+      "mean_unique_diag": 10.588647330462305,
+      "mean_sdoh_screenings": 13.53349245057853,
+      "mean_ed_visits": 0.725574638094744
+    },
+    {
+      "PatientBirthYearBin": 1970.0,
+      "n": 18563,
+      "mean_ed_ratio": 0.057055320893233126,
+      "mean_inpatient_ratio": 0.009505019677655413,
+      "mean_readmit": 0.010504767548348866,
+      "mean_encounters": 1.2134112767758705,
+      "mean_unique_diag": 9.826913753164899,
+      "mean_sdoh_screenings": 12.594192749016862,
+      "mean_ed_visits": 0.7169099822227011
+    },
+    {
+      "PatientBirthYearBin": 1975.0,
+      "n": 19452,
+      "mean_ed_ratio": 0.06634698404537706,
+      "mean_inpatient_ratio": 0.01042286688703354,
+      "mean_readmit": 0.008071149496195765,
+      "mean_encounters": 1.1646484963130777,
+      "mean_unique_diag": 8.99126053876208,
+      "mean_sdoh_screenings": 11.62353485502776,
+      "mean_ed_visits": 0.7200287888134896
+    },
+    {
+      "PatientBirthYearBin": 1980.0,
+      "n": 21561,
+      "mean_ed_ratio": 0.0798969752681608,
+      "mean_inpatient_ratio": 0.01180298073180036,
+      "mean_readmit": 0.007142525856871203,
+      "mean_encounters": 1.1664989148058538,
+      "mean_unique_diag": 8.257919391493902,
+      "mean_sdoh_screenings": 10.752562497101248,
+      "mean_ed_visits": 0.711516163443254
+    },
+    {
+      "PatientBirthYearBin": 1985.0,
+      "n": 21388,
+      "mean_ed_ratio": 0.09317284258931878,
+      "mean_inpatient_ratio": 0.014329473474105042,
+      "mean_readmit": 0.008556199738170936,
+      "mean_encounters": 1.1714225941565208,
+      "mean_unique_diag": 7.749859734430522,
+      "mean_sdoh_screenings": 10.466336263325228,
+      "mean_ed_visits": 0.794277164765289
+    },
+    {
+      "PatientBirthYearBin": 1990.0,
+      "n": 21399,
+      "mean_ed_ratio": 0.10208467948567139,
+      "mean_inpatient_ratio": 0.015575248390513032,
+      "mean_readmit": 0.007243329127529324,
+      "mean_encounters": 1.1858264437590307,
+      "mean_unique_diag": 7.419739240151409,
+      "mean_sdoh_screenings": 9.909621944950699,
+      "mean_ed_visits": 0.7829805131080891
+    },
+    {
+      "PatientBirthYearBin": 1995.0,
+      "n": 21832,
+      "mean_ed_ratio": 0.10562467985060522,
+      "mean_inpatient_ratio": 0.017964986875461428,
+      "mean_readmit": 0.007099670208867717,
+      "mean_encounters": 1.2124839466852124,
+      "mean_unique_diag": 6.933721143275926,
+      "mean_sdoh_screenings": 9.233235617442286,
+      "mean_ed_visits": 0.7505954562110663
+    },
+    {
+      "PatientBirthYearBin": 2000.0,
+      "n": 23920,
+      "mean_ed_ratio": 0.11281386285327237,
+      "mean_inpatient_ratio": 0.017790193713034988,
+      "mean_readmit": 0.006061872909698997,
+      "mean_encounters": 1.1928960156466508,
+      "mean_unique_diag": 6.154347826086957,
+      "mean_sdoh_screenings": 7.583235785953177,
+      "mean_ed_visits": 0.7308528428093646
+    },
+    {
+      "PatientBirthYearBin": 2005.0,
+      "n": 22172,
+      "mean_ed_ratio": 0.09162964266809501,
+      "mean_inpatient_ratio": 0.04669688631310922,
+      "mean_readmit": 0.006675085693667689,
+      "mean_encounters": 0.8966639615745187,
+      "mean_unique_diag": 5.9950387876601114,
+      "mean_sdoh_screenings": 5.04045643153527,
+      "mean_ed_visits": 0.5884899873714595
+    },
+    {
+      "PatientBirthYearBin": 2010.0,
+      "n": 18269,
+      "mean_ed_ratio": 0.07686095650734497,
+      "mean_inpatient_ratio": 0.025112490722008562,
+      "mean_readmit": 0.0035579396792380534,
+      "mean_encounters": 0.7182574512256242,
+      "mean_unique_diag": 5.212819530351962,
+      "mean_sdoh_screenings": 3.362526684547594,
+      "mean_ed_visits": 0.43018227598664405
+    },
+    {
+      "PatientBirthYearBin": 2015.0,
+      "n": 17468,
+      "mean_ed_ratio": 0.09909179406468081,
+      "mean_inpatient_ratio": 0.008071719690797202,
+      "mean_readmit": 0.0012021983054728647,
+      "mean_encounters": 0.6852109981945141,
+      "mean_unique_diag": 5.311770093885963,
+      "mean_sdoh_screenings": 2.2550950309136706,
+      "mean_ed_visits": 0.5291962445614838
+    },
+    {
+      "PatientBirthYearBin": 2020.0,
+      "n": 18806,
+      "mean_ed_ratio": 0.11172876610090872,
+      "mean_inpatient_ratio": 0.054978663450896297,
+      "mean_readmit": 0.0145166436243752,
+      "mean_encounters": 1.2121582728509046,
+      "mean_unique_diag": 5.984845262150378,
+      "mean_sdoh_screenings": 2.4912793789216208,
+      "mean_ed_visits": 0.7368924811230458
+    },
+    {
+      "PatientBirthYearBin": 2025.0,
+      "n": 2921,
+      "mean_ed_ratio": 0.04356777390692559,
+      "mean_inpatient_ratio": 0.1705915535893478,
+      "mean_readmit": 0.02704553235193427,
+      "mean_encounters": 3.367491574450371,
+      "mean_unique_diag": 3.704895583704211,
+      "mean_sdoh_screenings": 4.481342006162273,
+      "mean_ed_visits": 0.2389592605272167
+    }
+  ],
+  "weekend_effect": [
+    {
+      "is_weekend": false,
+      "total": 7357632,
+      "ed_visits": 189732,
+      "admissions": 77666,
+      "outpatient": 4227028,
+      "ed_rate": 0.025787101067299915,
+      "admission_rate": 0.01055584187956125,
+      "outpatient_rate": 0.5745092986439115,
+      "label": NaN
+    },
+    {
+      "is_weekend": true,
+      "total": 318169,
+      "ed_visits": 71726,
+      "admissions": 21773,
+      "outpatient": 204147,
+      "ed_rate": 0.225433653184314,
+      "admission_rate": 0.06843218541089799,
+      "outpatient_rate": 0.6416307056941437,
+      "label": NaN
+    }
+  ],
+  "comorbidity_dose_response": [
+    {
+      "diag_burden": "1",
+      "n": 66345,
+      "mean_ed_ratio": 0.1064184691134725,
+      "mean_readmit": 0.00048232722887934284,
+      "mean_admissions": 0.0342753787022383,
+      "mean_encounters": 1.077632509992951
+    },
+    {
+      "diag_burden": "2-3",
+      "n": 79608,
+      "mean_ed_ratio": 0.1030469293170721,
+      "mean_readmit": 0.0030022108330821024,
+      "mean_admissions": 0.14073962415837604,
+      "mean_encounters": 1.672186321089333
+    },
+    {
+      "diag_burden": "4-5",
+      "n": 44766,
+      "mean_ed_ratio": 0.07020970243825446,
+      "mean_readmit": 0.006768529687709422,
+      "mean_admissions": 0.16195326810525845,
+      "mean_encounters": 1.0745756782936533
+    },
+    {
+      "diag_burden": "6-10",
+      "n": 65343,
+      "mean_ed_ratio": 0.05168552961908168,
+      "mean_readmit": 0.010605573665120977,
+      "mean_admissions": 0.20745910043922072,
+      "mean_encounters": 0.8844084243295735
+    },
+    {
+      "diag_burden": "11+",
+      "n": 103698,
+      "mean_ed_ratio": 0.032689969088759555,
+      "mean_readmit": 0.03965360951995217,
+      "mean_admissions": 0.6283149144631526,
+      "mean_encounters": 1.5768835774053624
+    }
+  ],
+  "race_disparity": [
+    {
+      "OmbRace": "Native Hawaiian or Other Pacific Islander",
+      "n": 627,
+      "mean_ed_ratio": 0.19763884173927973,
+      "mean_readmit": 0.006379585326953748,
+      "mean_encounters": 1.4384406766831361,
+      "mean_sdoh": 9.679425837320574,
+      "mean_inpatient": 0.02901121075147414
+    },
+    {
+      "OmbRace": "Black or African American",
+      "n": 22285,
+      "mean_ed_ratio": 0.18716377915316054,
+      "mean_readmit": 0.01768005384787974,
+      "mean_encounters": 1.3705276377752262,
+      "mean_sdoh": 11.298451873457482,
+      "mean_inpatient": 0.022560127801300598
+    },
+    {
+      "OmbRace": "American Indian or Alaska Native",
+      "n": 2550,
+      "mean_ed_ratio": 0.12043355850821125,
+      "mean_readmit": 0.023529411764705882,
+      "mean_encounters": 1.394220198403263,
+      "mean_sdoh": 10.784313725490197,
+      "mean_inpatient": 0.034957351421469135
+    },
+    {
+      "OmbRace": "Two or More Races",
+      "n": 9590,
+      "mean_ed_ratio": 0.11887579091737678,
+      "mean_readmit": 0.018769551616266946,
+      "mean_encounters": 1.2016409478201515,
+      "mean_sdoh": 10.264754953076121,
+      "mean_inpatient": 0.038621777727833165
+    },
+    {
+      "OmbRace": "Some Other Race",
+      "n": 30013,
+      "mean_ed_ratio": 0.10300473104784039,
+      "mean_readmit": 0.009162696164995168,
+      "mean_encounters": 1.2958087380580339,
+      "mean_sdoh": 8.098024189517876,
+      "mean_inpatient": 0.022253565799074757
+    },
+    {
+      "OmbRace": "Asked but No Answer",
+      "n": 1024,
+      "mean_ed_ratio": 0.06789188693549661,
+      "mean_readmit": 0.0078125,
+      "mean_encounters": 1.3553916610806982,
+      "mean_sdoh": 8.84765625,
+      "mean_inpatient": 0.018403368892749697
+    },
+    {
+      "OmbRace": "White",
+      "n": 229623,
+      "mean_ed_ratio": 0.06501699400939098,
+      "mean_readmit": 0.015159631221611075,
+      "mean_encounters": 1.2599129925290107,
+      "mean_sdoh": 13.889322933678246,
+      "mean_inpatient": 0.019429115915504728
+    },
+    {
+      "OmbRace": "Asian",
+      "n": 2804,
+      "mean_ed_ratio": 0.05457021803903193,
+      "mean_readmit": 0.006776034236804565,
+      "mean_encounters": 1.1866426369460883,
+      "mean_sdoh": 11.320256776034237,
+      "mean_inpatient": 0.014588966190044692
+    }
+  ],
+  "strong_correlations": [
+    {
+      "var1": "sdoh_transportation_needs",
+      "var2": "sdoh_food_insecurity",
+      "spearman_r": 0.9958090142110119
+    },
+    {
+      "var1": "sdoh_financial_resource_strain",
+      "var2": "sdoh_food_insecurity",
+      "spearman_r": 0.9817923128143906
+    },
+    {
+      "var1": "sdoh_financial_resource_strain",
+      "var2": "sdoh_transportation_needs",
+      "spearman_r": 0.9798231838309333
+    },
+    {
+      "var1": "ed_visits",
+      "var2": "ed_ratio",
+      "spearman_r": 0.9623560155608777
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "unique_diagnoses",
+      "spearman_r": 0.9500130700743965
+    },
+    {
+      "var1": "hospital_admissions",
+      "var2": "inpatient_ratio",
+      "spearman_r": 0.941298107522534
+    },
+    {
+      "var1": "sdoh_social_connections",
+      "var2": "sdoh_financial_resource_strain",
+      "spearman_r": 0.8949574110688727
+    },
+    {
+      "var1": "sdoh_social_connections",
+      "var2": "sdoh_food_insecurity",
+      "spearman_r": 0.8832919381157458
+    },
+    {
+      "var1": "sdoh_social_connections",
+      "var2": "sdoh_transportation_needs",
+      "spearman_r": 0.8815825027025558
+    },
+    {
+      "var1": "unique_diagnoses",
+      "var2": "sdoh_total_screenings",
+      "spearman_r": 0.6669798045260001
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "sdoh_total_screenings",
+      "spearman_r": 0.6660736526563024
+    },
+    {
+      "var1": "sdoh_total_screenings",
+      "var2": "sdoh_transportation_needs",
+      "spearman_r": 0.6439797027407905
+    },
+    {
+      "var1": "sdoh_total_screenings",
+      "var2": "sdoh_food_insecurity",
+      "spearman_r": 0.6433211999484205
+    },
+    {
+      "var1": "sdoh_total_screenings",
+      "var2": "sdoh_financial_resource_strain",
+      "spearman_r": 0.6400401393800764
+    },
+    {
+      "var1": "sdoh_total_screenings",
+      "var2": "sdoh_social_connections",
+      "spearman_r": 0.5954416322169951
+    },
+    {
+      "var1": "ed_visits",
+      "var2": "hospital_admissions",
+      "spearman_r": 0.3993397200522872
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "sdoh_financial_resource_strain",
+      "spearman_r": 0.3780456137106761
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "sdoh_transportation_needs",
+      "spearman_r": 0.37332784153915516
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "sdoh_food_insecurity",
+      "spearman_r": 0.3724071629661086
+    },
+    {
+      "var1": "unique_diagnoses",
+      "var2": "sdoh_financial_resource_strain",
+      "spearman_r": 0.36718770068451423
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "sdoh_social_connections",
+      "spearman_r": 0.3671057843853194
+    },
+    {
+      "var1": "unique_diagnoses",
+      "var2": "sdoh_transportation_needs",
+      "spearman_r": 0.36383724059973843
+    },
+    {
+      "var1": "unique_diagnoses",
+      "var2": "sdoh_food_insecurity",
+      "spearman_r": 0.3629601715617149
+    },
+    {
+      "var1": "unique_diagnoses",
+      "var2": "sdoh_social_connections",
+      "spearman_r": 0.3553096508101852
+    },
+    {
+      "var1": "ed_visits",
+      "var2": "unique_diagnoses",
+      "spearman_r": 0.35136321421362965
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "hospital_admissions",
+      "spearman_r": 0.34459078160660955
+    },
+    {
+      "var1": "hospital_admissions",
+      "var2": "encounters_per_month",
+      "spearman_r": 0.33736150859938224
+    },
+    {
+      "var1": "ed_visits",
+      "var2": "inpatient_ratio",
+      "spearman_r": 0.33017206084559825
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "ed_visits",
+      "spearman_r": 0.3275741104359027
+    },
+    {
+      "var1": "hospital_admissions",
+      "var2": "readmit_30d",
+      "spearman_r": 0.31627884516477495
+    },
+    {
+      "var1": "encounters_per_month",
+      "var2": "inpatient_ratio",
+      "spearman_r": 0.3131679331654598
+    },
+    {
+      "var1": "total_encounters",
+      "var2": "approx_age",
+      "spearman_r": 0.31076241146622363
+    }
+  ]
+}

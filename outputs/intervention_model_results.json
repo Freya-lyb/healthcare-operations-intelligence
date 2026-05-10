@@ -1,0 +1,235 @@
+{
+  "intervention_1_extended_hours": {
+    "name": "Extended / Weekend Clinic Hours",
+    "hypothesis": "Avoidable ED visits spike on weekends due to PCP unavailability",
+    "n_classified_ed": 156820,
+    "n_weekend_ed": 44394,
+    "n_avoidable_weekend": 22133,
+    "avoidable_rate_weekend_pct": 49.86,
+    "avoidable_rate_weekday_pct": 51.04,
+    "rate_difference_pct": -1.18,
+    "chi2_statistic": 17.8015,
+    "p_value": 2.4519500049565642e-05,
+    "cramers_v": 0.0107,
+    "correlation_coeff_r": -0.0107,
+    "correlation_p_value": 2.3907859076469968e-05,
+    "projected_ed_reduction_pct": {
+      "conservative": 3.53,
+      "base": 6.35,
+      "optimistic": 9.17
+    },
+    "sensitivity_assumption": "% of avoidable weekend ED visits successfully diverted to extended-hours clinics"
+  },
+  "intervention_2_triage_diversion": {
+    "name": "Upgraded Triage with Licensed Staff",
+    "hypothesis": "Patient features available at triage predict avoidable ED use without diagnosis",
+    "train_mse": 0.214841,
+    "test_mse": 0.223321,
+    "n_model": 148109,
+    "n_train": 118487,
+    "n_test": 29622,
+    "features_used": [
+      "is_weekend",
+      "is_offhours",
+      "approx_age",
+      "is_female",
+      "sdoh_unique_domains",
+      "sdoh_financial_resource_strain",
+      "sdoh_housing_stability",
+      "sdoh_transportation_needs",
+      "encounters_per_month",
+      "pcp_ratio",
+      "mychart_active",
+      "admission_src_self",
+      "admission_type_non_emergency",
+      "smoking_current",
+      "is_hispanic",
+      "race_white",
+      "race_black",
+      "is_married",
+      "comorbidity_count",
+      "prior_preventable",
+      "prior_inpatient_frac"
+    ],
+    "auc_roc": 0.6806,
+    "sensitivity_recall": 0.6727,
+    "specificity": 0.5786,
+    "precision": 0.629,
+    "f1_score": 0.6501,
+    "p_value": 0.0,
+    "correlation_coeff_r": 0.3613,
+    "feature_importance_table": [
+      {
+        "feature": "admission_type_non_emergency",
+        "importance": 0.276579
+      },
+      {
+        "feature": "prior_preventable",
+        "importance": 0.189183
+      },
+      {
+        "feature": "approx_age",
+        "importance": 0.056885
+      },
+      {
+        "feature": "race_white",
+        "importance": 0.05676
+      },
+      {
+        "feature": "prior_inpatient_frac",
+        "importance": 0.049734
+      },
+      {
+        "feature": "race_black",
+        "importance": 0.048417
+      },
+      {
+        "feature": "comorbidity_count",
+        "importance": 0.040293
+      },
+      {
+        "feature": "sdoh_housing_stability",
+        "importance": 0.033795
+      },
+      {
+        "feature": "is_female",
+        "importance": 0.024433
+      },
+      {
+        "feature": "encounters_per_month",
+        "importance": 0.022501
+      },
+      {
+        "feature": "admission_src_self",
+        "importance": 0.022218
+      },
+      {
+        "feature": "smoking_current",
+        "importance": 0.019571
+      },
+      {
+        "feature": "sdoh_transportation_needs",
+        "importance": 0.019105
+      },
+      {
+        "feature": "sdoh_unique_domains",
+        "importance": 0.019041
+      },
+      {
+        "feature": "is_weekend",
+        "importance": 0.019041
+      },
+      {
+        "feature": "pcp_ratio",
+        "importance": 0.018837
+      },
+      {
+        "feature": "mychart_active",
+        "importance": 0.018073
+      },
+      {
+        "feature": "is_married",
+        "importance": 0.017581
+      },
+      {
+        "feature": "sdoh_financial_resource_strain",
+        "importance": 0.017287
+      },
+      {
+        "feature": "is_offhours",
+        "importance": 0.016458
+      },
+      {
+        "feature": "is_hispanic",
+        "importance": 0.014209
+      }
+    ],
+    "projected_ed_reduction_pct": {
+      "conservative": 17.06,
+      "base": 23.88,
+      "optimistic": 30.7
+    },
+    "sensitivity_assumption": "50/70/90 % of triage-flagged avoidable visits are successfully diverted",
+    "hyperparameters": {
+      "model": "XGBoost",
+      "n_estimators": 3000,
+      "max_depth": 6,
+      "learning_rate": 0.005,
+      "subsample": 0.7,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 3,
+      "gamma": 0,
+      "reg_alpha": 0.0,
+      "reg_lambda": 2.0,
+      "scale_pos_weight": 1,
+      "test_size": 0.2,
+      "random_state": 42,
+      "n_permutations": 200
+    }
+  },
+  "intervention_3_mychart_sdoh": {
+    "name": "MyChart Activation + SDOH Resource Referral",
+    "hypothesis": "MyChart activation is associated with substantially lower ED utilization rate",
+    "n_activated": 230467,
+    "n_not_activated": 129293,
+    "ed_ratio_activated_mean": 0.0436,
+    "ed_ratio_not_activated_mean": 0.117,
+    "ed_ratio_diff_pct": -62.7,
+    "cohens_d": -0.3634,
+    "mann_whitney_u": 14234296058.0,
+    "p_value": 2.467322257584779e-163,
+    "correlation_coeff_r": -0.1885,
+    "correlation_p_value": 0.0,
+    "projected_ed_reduction_pct": {
+      "conservative": 0.26,
+      "base": 0.53,
+      "optimistic": 0.92
+    },
+    "sensitivity_assumption": "% of currently unactivated patients who gain MyChart access"
+  },
+  "intervention_4_specialist_reallocation": {
+    "name": "Idle Specialist Reallocation as Part-time PCP",
+    "hypothesis": "Higher PCP encounter ratio is negatively correlated with ED utilization",
+    "n_patients": 359760,
+    "pearson_r": -0.173,
+    "pearson_p_value": 0.0,
+    "spearman_rho": -0.1092,
+    "spearman_p_value": 0.0,
+    "correlation_coeff_r": -0.173,
+    "ols_slope": -0.134904,
+    "ols_slope_se": 0.001281,
+    "ols_p_value": 0.0,
+    "p_value": 0.0,
+    "n_idle_providers": 1606,
+    "idle_threshold_p25_enc": 1.0,
+    "projected_ed_reduction_pct": {
+      "conservative": 0.0,
+      "base": 0.0,
+      "optimistic": 0.0
+    },
+    "sensitivity_assumption": "% of idle (\u2264P25 load) providers redeployed as 0.5 FTE PCP"
+  },
+  "overall": {
+    "n_ed_encounters_raw": 261458,
+    "n_ed_classified": 156820,
+    "n_ed_unknown_excluded": 104638,
+    "unknown_exclusion_pct": 40.02,
+    "avoidable_pct_of_classified": 50.7,
+    "not_avoidable_pct_of_classified": 49.3,
+    "fisher_combined_chi2": 3533.1707,
+    "fisher_combined_p_value": 0.0,
+    "multiple_R_with_interactions": 0.2659,
+    "multiple_R_squared_with_interactions": 0.0707,
+    "interaction_term_correlations": {
+      "mychart_x_pcp": -0.1461,
+      "mychart_x_sdoh": -0.0919,
+      "pcp_x_sdoh": -0.082
+    },
+    "projected_combined_reduction_pct": {
+      "conservative": 22.06,
+      "base": 32.42,
+      "optimistic": 42.79
+    },
+    "projection_method": "Sequential absorption: INT1 diverts avoidable weekend visits first, INT2 draws from remaining pool via triage recall, INT3+INT4 applied multiplicatively (1-(1-eff3)(1-eff4)) to capture synergy between MyChart access and PCP coverage. Unknown-class encounters excluded throughout."
+  }
+}

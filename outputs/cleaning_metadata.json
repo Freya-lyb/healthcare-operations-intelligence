@@ -1,0 +1,59 @@
+{
+  "cleaning_strategy": {
+    "*Unknown": "converted to NaN (true missing)",
+    "*Not Applicable": "converted to NaN (structural missing)",
+    "*Deleted": "rows excluded (data quality issue)",
+    "*Unspecified": "kept as-is (informative: asked but not answered)",
+    "-1/-2/-3 FK": "converted to NaN (missing foreign key)"
+  },
+  "files_produced": [
+    "patients_cleaned.csv",
+    "providers_cleaned.csv",
+    "departments_cleaned.csv",
+    "diagnosis_cleaned.csv",
+    "social_determinants_cleaned.csv",
+    "encounters_cleaned.csv",
+    "tigercensuscodes.csv"
+  ],
+  "summary": {
+    "patients": {
+      "input": 947685,
+      "output": 947685
+    },
+    "providers": {
+      "input": 299075,
+      "output": 298271
+    },
+    "departments": {
+      "input": 11597,
+      "output": 11593
+    },
+    "diagnosis": {
+      "input": 1531262,
+      "output": 1531262
+    },
+    "social_determinants": {
+      "input": 3977901,
+      "output": 1651705
+    },
+    "encounters": {
+      "input": 7675801,
+      "output": 7675801
+    },
+    "tigercensuscodes": {
+      "input": 2463,
+      "output": 2463
+    }
+  },
+  "date_anomalies": {
+    "future": "0",
+    "discharge_before_admit": "2"
+  },
+  "key_changes": [
+    "patients: DurableKey renamed to PatientDurableKey",
+    "providers: DurableKey renamed to ProviderDurableKey, special keys removed",
+    "departments: special keys removed",
+    "social_determinants: Domain backfilled via DisplayName mapping, no-info rows removed",
+    "encounters: FK -1 values set to NaN, dates parsed as datetime"
+  ]
+}

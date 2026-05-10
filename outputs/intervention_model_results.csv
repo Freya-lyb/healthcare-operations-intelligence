@@ -1,0 +1,6 @@
+intervention,name,p_value,correlation_coeff_r,effect_size,effect_size_metric,sensitivity_recall,specificity,projected_reduction_conservative_pct,projected_reduction_base_pct,projected_reduction_optimistic_pct,n
+intervention_1_extended_hours,Extended / Weekend Clinic Hours,2.4519500049565642e-05,-0.0107,0.0107,cramers_v,,,3.53,6.35,9.17,156820
+intervention_2_triage_diversion,Upgraded Triage with Licensed Staff,0.0,0.3613,0.6806,auc_roc,0.6727,0.5786,17.06,23.88,30.7,148109
+intervention_3_mychart_sdoh,MyChart Activation + SDOH Resource Referral,2.467322257584779e-163,-0.1885,-0.3634,cohens_d,,,0.26,0.53,0.92,230467
+intervention_4_specialist_reallocation,Idle Specialist Reallocation as Part-time PCP,0.0,-0.173,-0.134904,ols_slope,,,0.0,0.0,0.0,359760
+overall,Combined Four-Intervention Bundle,0.0,0.2659,0.0707,multiple_R_squared,,,22.06,32.42,42.79,156820
